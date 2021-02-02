@@ -1,0 +1,8 @@
+%h1 Show Doc!
+%article.card.md-8.p-3.bg-light
+ %h3= @doc.title
+ %p= @doc.body
+%br/
+= link_to "Home", docs_path, class:"btn btn-secondary"
+= link_to "Edit", edit_doc_path(@doc.id), class:"btn btn-warning"
+= link_to "Delete", doc_path(@doc.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"

@@ -1,0 +1,10 @@
+%section.container.mt-5.mb-5
+ %h1 All Docs
+ %hr/
+ - @docs.each do |doc|
+  %article.p-3.mb-3.bg-light
+   %h3= doc.title
+   %p{:class => 'badge badge-success'}= time_ago_in_words(doc.created_at)
+   %p= truncate(doc.body, length: 200)
+   = link_to "Show All", doc_path(doc.id), class:"btn btn-info"
+ = link_to "New Doc", new_doc_path, class:"btn btn-success"

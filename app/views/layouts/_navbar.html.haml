@@ -1,0 +1,12 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.justify-content-between
+ %a.navbar-brand{:href => root_path} File Cabinet
+ %form.form-inline.my-2.my-lg-0
+  %input.form-control.mr-sm-2{:placeholder => "Search", :type => "text"}/
+  %button.btn.btn-secondary.my-2.my-sm-0.mr-2{:type => "submit"} Search
+  %ul.navbar-nav
+  - if user_signed_in? 
+   = link_to "Create new doc", new_doc_path, class:"btn btn-success mr-2"
+   = link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-dark"
+  - else
+   = link_to "Sign in", new_user_session_path, class:"btn btn-warning mr-2"
+   = link_to "Register", new_user_registration_path,class:"btn btn-danger"

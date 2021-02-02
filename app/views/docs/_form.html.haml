@@ -1,0 +1,7 @@
+%article.bg-light.p-5
+ = simple_form_for @doc do |f|
+  = f.input :title
+  = f.input :body
+  = f.button :submit, class:"btn btn-success"
+ %br/
+ = link_to "Back", docs_path, class:"btn btn-primary"
